@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+          <th>Id</th>  
+          <th>Name</th>  
+          <th>Age</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of data.currentData">
+            <td>
+                {{data.id}}  
+              </td>  
+                    <td>
+                {{data.name}}  
+              </td>
+              <td>
+                <ng-container *ngIf="getPreviousAge(data.id)!==data.age">
+                    {{getPreviousAge(data.id)}} to 
+                </ng-container>
+                {{data.age}}  
+              </td>
+        </tr>
+    </tbody>
+</table>
